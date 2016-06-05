@@ -1,5 +1,4 @@
 #install dependencies we will require
-install.packages("data.table")
 library(data.table)
 
 #create buildAggMeanOutputDF function
@@ -73,9 +72,9 @@ buildAggMeanOutputDF <- function(origData){
 	#first start by creating the means of each grouping 
 	#by StrLabel (Walking, Laying, Sitting etc... 
 	#and this can all be done in one simple line:
-	returnData <- fDataWithLabels[,lapply(.SD,mean) ,by=StrLabel, .SDcols=colLabels]
+	returnData <- fDataWithLabels[,lapply(.SD,mean) ,by=StrLabel, .SDcols=colNames]
 
-	avgColNames <- c()
+	avgColNames <- c("Activity")
 
 	#last we want to rename the columns with the "AVG" handle as a prefix to indicate they are averages(means) 
 	for(aColName in colNames){

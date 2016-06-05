@@ -37,6 +37,9 @@ These scripts will automatically be sourced by running the main run_analysis.R f
 
 ===========================================================
 
+Before you being it is NECESSARY to ensure the data.tables package is installed:
+	install.packages("data.table")
+
 My script for run_analysis.R can be run by loading it with: 
 	source("run_analysis.R")
 

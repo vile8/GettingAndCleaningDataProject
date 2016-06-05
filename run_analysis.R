@@ -12,7 +12,6 @@
 ## - More is described inline below, as well as potential optimizations
 
 #install dependencies we will require
-install.packages("data.table")
 library(data.table)
 
 source("fetchAndUnpackData.R")
