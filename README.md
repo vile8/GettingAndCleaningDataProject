@@ -1,11 +1,11 @@
 ===========================================================
-##Getting and cleaning data Assignment Week 4 assignment 
+Getting and cleaning data Assignment Week 4 assignment 
 Version 1.0
 ===========================================================
 James McDermott
 james@vaniv.com
 ===========================================================
-##Assignment: Getting and Cleaning Data Course Project
+Assignment: Getting and Cleaning Data Course Project
 ===========================================================
 
 This assignment indicated we need to achieve 4 core objectives
