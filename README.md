@@ -28,6 +28,13 @@ This assignment requires we provide a script named: run_analysis.R which modifie
 	4. Appropriately labels the data set with descriptive variable names.
 	5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+In addition to creating the run_analysis.R file there are 3 additional files to make it simpler to (re)use components of this project and make it more readable.
+These scripts will automatically be sourced by running the main run_analysis.R file so long as they are in the same directory and include:
+	
+	1. buildAggMeanOutputDF.R 
+	2. createNamedDataSet.R   
+	3. fetchAndUnpackData.R
+
 ===========================================================
 
 My script for run_analysis.R can be run by loading it with: 
@@ -53,6 +60,23 @@ The run_analysis.R script:
 		* binding for merges, 
 		* grep for subsetting
 		* data.table package usage for performing aggregation and grouping 
+
+The fetchAndUnpackData.R script:
+	
+	* Downloads places in the ./data directory the UCI dataset
+
+The createNamedDataSet.R script:
+	
+	* is used to create the dataStdMeanOnly dataframes 
+	* loads and merges the train and test datasets
+	* applies labels
+	* reduces to std() and mean() only columns
+
+The buildAggMeanOutputDF.R script:
+
+	* is used to create the mean of all variables in a new dataset 
+	* with proper renaming 
+	* grouping by activity labels
 
 ===========================================================
 
