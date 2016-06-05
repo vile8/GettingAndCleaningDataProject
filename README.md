@@ -48,7 +48,10 @@ The run_analysis.R script:
 	* will create 2 artifacts in memory which you can leverage:
 		* dataStdMeanOnly -> which represents the data transformed for the first 4 requirements as listed above
 		* averagedStdMeanOnlyActivities -> which represents the data for the 5th requirement as listed above
+	* will write the file: summarized_data.txt -> which represents the data from averagedStdMeanOnlyActivities
+		* this data includes the subject, the activity, and each variable described in the original data set averaged(mean) by c(activity,subject) as requested
 	* is heavily documented inline
+	* provides ALTERNATIVE aggregate behaviors for viewing the data in alternate ways
 	* will automatically create the ./data directory respective to the session workspace
 	* will automatically download and unzip the dataset
 	* will only execute the transformations if the dataset has downloaded and unpacked appropriately
@@ -66,20 +69,27 @@ The run_analysis.R script:
 
 The fetchAndUnpackData.R script:
 	
+	* provides the function fetchAndUnpackData which returns a boolean value
 	* Downloads places in the ./data directory the UCI dataset
+	
 
 The createNamedDataSet.R script:
 	
+	* provides the function createNamedDataSet
 	* is used to create the dataStdMeanOnly dataframes 
 	* loads and merges the train and test datasets
 	* applies labels
 	* reduces to std() and mean() only columns
+	* is heavily documented inline
 
 The buildAggMeanOutputDF.R script:
 
+	* provides the functionality buildAggMeanOutputDF which returns the aggregated dataset
+		* buildAggMeanOutputDF takes alternate arguments to alter the behavior of the aggregation for viewing different possible results
 	* is used to create the mean of all variables in a new dataset 
 	* with proper renaming 
-	* grouping by activity labels
+	* grouping by subject then activity labels
+	* is heavily documented inline
 
 ===========================================================
 

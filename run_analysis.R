@@ -30,7 +30,17 @@ if(fetchAndUnpackData()){
 
 	##Requirements for item 5
 	#5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-	averagedStdMeanOnlyActivities <- buildAggMeanOutputDF(dataStdMeanOnly)
+
+	#The second argument to buildAggMeanOutputDF controls aggregation behavior
+        #determine if we want to order by subject or activity for aggregate means operations
+	#"tidy data set with the average of each variable for each activity and each subject."
+	#1 - c("ACTIVITY", "SUBJECT") #this is the requested processing order according to the instructions from step 5
+	#2 - c("ACTIVITY")
+	#3 - c("SUBJECT", "ACTIVITY")
+	averagedStdMeanOnlyActivities <- buildAggMeanOutputDF(dataStdMeanOnly,1)
+
+	##write to file: summarized_data.txt
+	write.table(averagedStdMeanOnlyActivities,file="summarized_data.txt",row.name=FALSE)
 
 } else {
 	print("Problem downloading and extracting data from zip file!")
