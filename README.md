@@ -10,6 +10,7 @@ Assignment: Getting and Cleaning Data Course Project
 ===========================================================
 
 This assignment indicated we need to achieve 4 core objectives
+
 	* The data set is tidy (as per the definition)
 	* The github repo (project) contains the required scripts
 	* The github repo (project) contains a codebook that describes the changes to the codebooks
@@ -20,6 +21,7 @@ This assignment requires the above be generated based on the dataset provided he
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip	
 
 This assignment requires we provide a script named: run_analysis.R which modifies the zipped data to provide:
+
 	1. Merges the training and the test sets to create one data set.
 	2. Extracts only the measurements on the mean and standard deviation for each measurement.
 	3. Uses descriptive activity names to name the activities in the data set
@@ -32,6 +34,7 @@ My script for run_analysis.R can be run by loading it with:
 	source("run_analysis.R")
 
 The run_analysis.R script:
+
 	* will create 2 artifacts in memory which you can leverage:
 		* dataStdMeanOnly -> which represents the data transformed for the first 4 requirements as listed above
 		* averagedStdMeanOnlyActivities -> which represents the data for the 5th requirement as listed above
