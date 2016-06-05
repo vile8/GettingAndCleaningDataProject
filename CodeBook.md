@@ -1,10 +1,3 @@
-## This file is intended to automate the generation of the codebook for 
-## the project. As opposed to manually writing out 60+ columns plus aggregates.
-
-# read the names from the dataset
-# for each name compare against the type and apply the description as provided in the features labels to make it abundantly clear
-# what data we are providing
-
 2 output datasets are created by running the run_analysis.R script:
 
 1. dataStdMeanOnly : This dataset represent the first four requirements as described in the assignment:
@@ -14,12 +7,14 @@
 	d. Appropriately labels the data set with descriptive variable names.
 
 	To achieve these four goals it first calls: fetchAndUnpackData which:
+
 		- creates a ./data directory if one does not exist
 		- downloads the dataset from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 		- calls unzip() to extract the data into the ./data/UCI HAR Dataset/ directory
 		- if successful it runs the functions "createNamedDataSet()" which populates the dataStdMeanOnly variable as a dataframe.
 
 	The createNamedDataSet() function performs the following tasks to create the required dataset and stores the output in dataStdMeanOnly:
+
 		- loads data for labels using read.table() with arguments for stringsAsFactors = FALSE as a dataframe from:
 			- ./data/UCI HAR Dataset/features.txt for feature labels
 		- creates a columnNamesList vector against the V2 of the features dataframe
@@ -35,12 +30,15 @@
 		- returns the processedData dataframe which is appropriately labeled and reduced 
 
 	The returned data is a dataframe with: 10299 obs. of  66 variables
+
 		- These variables are all the same as what is described in the ./data/UCI HAR Dataset/features.txt and are all numeric
 
 2. averagedStdMeanOnlyActivities : This dataset represents the 5th requirement as described in the assignment, and leverages the returned data stored in dataStdMeanOnly to do so:
+
 	e. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 	To achieve this goal it calls: buildAggMeanOutputDF(dataStdMeanOnly) which:
+
 		- loads the additional datasets for activity labels using read.table with the argument for stringsAsFactors = FALSE:
 			- ./data/UCI HAR Dataset/test/y_test.txt
 			- ./data/UCI HAR Dataset/train/y_train.txt
