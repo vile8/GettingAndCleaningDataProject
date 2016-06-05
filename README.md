@@ -1,5 +1,5 @@
 ===========================================================
-Getting and cleaning data Assignment Week 4 assignment 
+Getting and cleaning data Week 4 Project 
 ===========================================================
 Version 1.0
 ===========================================================
