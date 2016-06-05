@@ -203,7 +203,7 @@ buildAggMeanOutputDF <- function(origData){
 	#column names have been adjusted to represent:
 	#[1] "AVG-tBodyAcc.mean...X"           "AVG-tBodyAcc.mean...Y"           "AVG-tBodyAcc.mean...Z" ...
 	#now apply to our return data set	
-	setnames(origNamedData, avgColNames)
+	setnames(returnData, avgColNames)
 
 	return(returnData)
 }
